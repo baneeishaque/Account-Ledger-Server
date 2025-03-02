@@ -1,0 +1,49 @@
+name: Database Backup from Server via. mysqldump
+
+on:
+  schedule:
+    # 00:00 IST, 06:00 IST, 12:00 IST, 18:00 IST
+    - cron: "30 18,0,6,12 * * *"
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update package repository
+        run: sudo apt-get update
+
+      - name: Install MySQL client
+        run: sudo apt-get install -y mysql-client
+
+      - name: Backup database from ${{ secrets.SERVER_NAME }} via. mysqldump
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          SERVER_NAME: ${{ secrets.SERVER_NAME }}
+        run: |
+          export TZ='Asia/Kolkata'
+          BACKUP_FILE="${SERVER_NAME}-${DB_USER}-${DB_NAME}.sql"
+          mysqldump -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME > $BACKUP_FILE
+
+      - name: Configure Git
+        uses: fregante/setup-git-user@v2.0.2
+
+      - name: Add and Commit Changes
+        run: |
+          git add *.sql
+          DB_FILE=$(ls -t *.sql | head -n 1)
+          DB_TIMESTAMP=$(TZ='Asia/Kolkata' date -r $DB_FILE "+%d-%m-%Y %H-%M-%S IST")
+          git commit -m "Added DB Backup file $(basename $DB_FILE) from ${SERVER_NAME} On ${DB_TIMESTAMP}"
+
+      - name: Push Changes to Master
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
