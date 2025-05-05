@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9272 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9276 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2068,7 +2068,11 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9268,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java Desktop Application Development Works:DGS ICE - Sirajudheen Wayanadan Bangalore:Transportation:Snacks','Snacks',9265,'RECEIVABLE','','CURRENCY','INR',39,'F','F','2025-03-24 02:01:29'),
 (9269,'Assets:Receivable Assets:Refunds:UTS Ticket Booking Error After Payment Success','UTS Ticket Booking Error After Payment Success',819,'RECEIVABLE','','CURRENCY','INR',39,'F','F','2025-03-24 08:59:51'),
 (9270,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java Desktop Application Development Works:DGS ICE - Sirajudheen Wayanadan Bangalore:Transportation:Public:Train Fair','Train Fair',9266,'RECEIVABLE','','CURRENCY','INR',39,'F','F','2025-03-24 09:02:23'),
-(9271,'Income:Interests:Money Lending Intrests:Akhil CSE 2015-19 CCET Valanchery 10k March 2025','Akhil CSE 2015-19 CCET Valanchery 10k March 2025',9211,'INCOME','','CURRENCY','INR',39,'F','F','2025-03-24 12:19:20');
+(9271,'Income:Interests:Money Lending Intrests:Akhil CSE 2015-19 CCET Valanchery 10k March 2025','Akhil CSE 2015-19 CCET Valanchery 10k March 2025',9211,'INCOME','','CURRENCY','INR',39,'F','F','2025-03-24 12:19:20'),
+(9272,'Liabilities:Loans:MacBook Air M2 2022 Croma HDFC Consumer Loan','MacBook Air M2 2022 Croma HDFC Consumer Loan',4399,'LIABILITY','','CURRENCY','INR',40,'F','F','2025-05-05 19:59:19'),
+(9273,'Liabilities:Loans:HDFC Micro Personal Loan 67k for Home Renovation','HDFC Micro Personal Loan 67k for Home Renovation',4399,'LIABILITY','','CURRENCY','INR',40,'F','F','2025-05-05 20:06:57'),
+(9274,'Expenses:Loan Expenses:Loan Interests:MacBook Air M2 2022 Croma HDFC Consumer Loan','MacBook Air M2 2022 Croma HDFC Consumer Loan',8781,'EXPENSE','','CURRENCY','INR',40,'F','F','2025-05-05 20:18:52'),
+(9275,'Expenses:Loan Expenses:HDFC Micro Personal Loan 67k for Home Renovation','HDFC Micro Personal Loan 67k for Home Renovation',8780,'EXPENSE','','CURRENCY','INR',40,'F','F','2025-05-05 20:19:20');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2297,7 +2301,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65776 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65782 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11454,7 +11458,13 @@ INSERT INTO `transactionsv2` VALUES (4,'2018-06-02 11:30:00','Shave - shapes',50
 (65772,'2025-05-04 10:10:25','Credit 2.6k, total his credit 5k, includes previous 2.4k',2600,'2025-05-05 04:09:18',40,8935,2681),
 (65773,'2025-05-04 11:00:00','Farseen 3k for Hameed 3k Transfer, Hameed Paid as Cash',3000,'2025-05-05 05:31:07',40,8740,8935),
 (65774,'2025-05-04 11:05:00','Farseen 3k for Hameed 3k Transfer, Hameed Paid as Cash',3000,'2025-05-05 05:31:29',40,8935,5159),
-(65775,'2025-05-04 11:10:00','Farseen 3k for Hameed 3k Transfer, Hameed Paid as Cash',3000,'2025-05-05 05:31:41',40,5159,6);
+(65775,'2025-05-04 11:10:00','Farseen 3k for Hameed 3k Transfer, Hameed Paid as Cash',3000,'2025-05-05 05:31:41',40,5159,6),
+(65776,'2025-05-05 09:00:26','Outstanding Principal Amount, 67k - 5138 - 5215 - 5293 - 5372, Jan. 07 2025 to Apr. 07 2025',45982,'2025-05-05 20:14:09',40,9273,483),
+(65777,'2025-05-05 09:05:00','Outstanding Principal Amount, 82076 - 7840 - 2923 - 2962 - 3002, Jan. 05 2025 to Apr. 05 2025',65349,'2025-05-05 20:17:23',40,9272,483),
+(65778,'2025-05-05 10:00:00','May 2025 EMI, Principal 3042, Interest 878',3042,'2025-05-05 20:20:33',40,8935,9272),
+(65779,'2025-05-05 10:05:00','May 2025 EMI, Principal 3042, Interest 878',878,'2025-05-05 20:22:39',40,8935,9274),
+(65780,'2025-05-05 12:00:27','Home Renovation Bill Balance',13000,'2025-05-05 20:25:57',40,8589,483),
+(65781,'2025-05-05 12:05:27','Credit',40000,'2025-05-05 20:26:32',40,7719,483);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11553,4 +11563,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-05  1:32:42
+-- Dump completed on 2025-05-05 18:44:26
