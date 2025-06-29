@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9276 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9277 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2072,7 +2072,8 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9272,'Liabilities:Loans:MacBook Air M2 2022 Croma HDFC Consumer Loan','MacBook Air M2 2022 Croma HDFC Consumer Loan',4399,'LIABILITY','','CURRENCY','INR',40,'F','F','2025-05-05 19:59:19'),
 (9273,'Liabilities:Loans:HDFC Micro Personal Loan 67k for Home Renovation','HDFC Micro Personal Loan 67k for Home Renovation',4399,'LIABILITY','','CURRENCY','INR',40,'F','F','2025-05-05 20:06:57'),
 (9274,'Expenses:Loan Expenses:Loan Interests:MacBook Air M2 2022 Croma HDFC Consumer Loan','MacBook Air M2 2022 Croma HDFC Consumer Loan',8781,'EXPENSE','','CURRENCY','INR',40,'F','F','2025-05-05 20:18:52'),
-(9275,'Expenses:Loan Expenses:HDFC Micro Personal Loan 67k for Home Renovation','HDFC Micro Personal Loan 67k for Home Renovation',8780,'EXPENSE','','CURRENCY','INR',40,'F','F','2025-05-05 20:19:20');
+(9275,'Expenses:Loan Expenses:HDFC Micro Personal Loan 67k for Home Renovation','HDFC Micro Personal Loan 67k for Home Renovation',8780,'EXPENSE','','CURRENCY','INR',40,'F','F','2025-05-05 20:19:20'),
+(9276,'Assets:Fixed Assets:Electronic Wallets:Tata Neu Coins','Tata Neu Coins',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-29 11:56:26');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2301,7 +2302,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65785 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65788 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11467,7 +11468,10 @@ INSERT INTO `transactionsv2` VALUES (4,'2018-06-02 11:30:00','Shave - shapes',50
 (65781,'2025-05-05 12:05:27','Credit',40000,'2025-05-05 20:26:32',40,7719,483),
 (65782,'2025-06-12 03:46:03','Initial Balance',550,'2025-06-12 03:46:47',41,483,6),
 (65783,'2025-06-12 03:47:36','Initial Balance',25.15,'2025-06-12 03:47:55',41,483,8935),
-(65784,'2025-06-12 03:52:36','Cash for transfer (not transferred yet)',1500,'2025-06-12 03:49:05',41,688,6);
+(65784,'2025-06-12 03:52:36','Cash for transfer (not transferred yet)',1500,'2025-06-12 03:49:05',41,688,6),
+(65785,'2025-06-29 11:38:06','Initial Balance',4,'2025-06-29 11:38:26',42,483,8862),
+(65786,'2025-06-29 11:43:43','Opening Balance',13839.32,'2025-06-29 11:44:08',42,8862,8935),
+(65787,'2025-06-29 12:03:29','Opening Balance',360,'2025-06-29 12:03:47',42,483,9276);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11483,7 +11487,7 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=242 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=243 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11536,7 +11540,8 @@ INSERT INTO `users` VALUES (0,'banee_ishaque_k_27_05_2018','9895204814'),
 (38,'banee_ishaque_k_29_10_2024_17_00','9895204814'),
 (39,'banee_ishaque_k_17_03_2025_19_35','9895204814'),
 (40,'banee_ishaque_k_04_05_2024_09_00','9895204814'),
-(41,'banee_ishaque_k_12_06_2025_02_45','9895204814');
+(41,'banee_ishaque_k_12_06_2025_02_45','9895204814'),
+(42,'banee_ishaque_k_29_06_2025_09_00','9895204814');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11567,4 +11572,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-12  2:22:43
+-- Dump completed on 2025-06-29  6:48:14
