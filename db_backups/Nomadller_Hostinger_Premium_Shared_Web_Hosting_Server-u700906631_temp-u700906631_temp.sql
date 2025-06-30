@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9278 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9285 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2074,7 +2074,14 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9274,'Expenses:Loan Expenses:Loan Interests:MacBook Air M2 2022 Croma HDFC Consumer Loan','MacBook Air M2 2022 Croma HDFC Consumer Loan',8781,'EXPENSE','','CURRENCY','INR',40,'F','F','2025-05-05 20:18:52'),
 (9275,'Expenses:Loan Expenses:HDFC Micro Personal Loan 67k for Home Renovation','HDFC Micro Personal Loan 67k for Home Renovation',8780,'EXPENSE','','CURRENCY','INR',40,'F','F','2025-05-05 20:19:20'),
 (9276,'Assets:Fixed Assets:Electronic Wallets:Tata Neu Coins','Tata Neu Coins',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-29 11:56:26'),
-(9277,'Assets:Fixed Assets:Electronic Wallets:POP Coins','POP Coins',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-29 12:48:38');
+(9277,'Assets:Fixed Assets:Electronic Wallets:POP Coins','POP Coins',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-29 12:48:38'),
+(9278,'Assets:Fixed Assets:Electronic Wallets:PayTM:Paytm - Banee Ishaque K - Cashback Points','Paytm - Banee Ishaque K - Cashback Points',19,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 03:24:49'),
+(9279,'Assets:Fixed Assets:Electronic Wallets:Super Money','Super Money',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 03:28:17'),
+(9280,'Assets:Fixed Assets:Electronic Wallets:Spaid','Spaid',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 05:14:39'),
+(9281,'Assets:Fixed Assets:Electronic Wallets:GBCash','GBCash',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 05:34:16'),
+(9282,'Assets:Fixed Assets:Electronic Wallets:Google Play Points','Google Play Points',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 05:46:36'),
+(9283,'Assets:Fixed Assets:Electronic Wallets:Google Play Balance','Google Play Balance',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 05:53:12'),
+(9284,'Assets:Fixed Assets:Electronic Wallets:PhonePe Gift Card','PhonePe Gift Card',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 06:07:20');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2303,7 +2310,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65791 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65800 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11474,7 +11481,16 @@ INSERT INTO `transactionsv2` VALUES (4,'2018-06-02 11:30:00','Shave - shapes',50
 (65786,'2025-06-29 11:43:43','Opening Balance',13839.32,'2025-06-29 11:44:08',42,483,8935),
 (65787,'2025-06-29 12:03:29','Opening Balance',360,'2025-06-29 12:03:47',42,483,9276),
 (65788,'2025-06-29 12:48:07','Opening Balance',50,'2025-06-29 12:48:54',42,483,9277),
-(65789,'2025-06-29 12:57:00','Opening Balance',12.45,'2025-06-29 12:57:34',42,483,9190);
+(65789,'2025-06-29 12:57:00','Opening Balance',12.45,'2025-06-29 12:57:34',42,483,9190),
+(65791,'2025-06-30 02:34:55','Opening Balance',17,'2025-06-30 02:35:15',42,483,3781),
+(65792,'2025-06-30 03:23:44','Opening Balance',15,'2025-06-30 03:24:10',42,483,8880),
+(65793,'2025-06-30 03:28:44','Opening Balance',1035,'2025-06-30 03:25:07',42,483,9278),
+(65794,'2025-06-30 03:27:54','Opening Balance',1.8,'2025-06-30 03:28:26',42,483,9279),
+(65795,'2025-06-30 05:14:22','Opening Balance',60,'2025-06-30 05:14:53',42,483,9280),
+(65796,'2025-06-30 05:33:59','Opening Balance',50,'2025-06-30 05:34:29',42,483,9281),
+(65797,'2025-06-30 05:45:57','Opening Balance',945,'2025-06-30 05:46:52',42,483,9282),
+(65798,'2025-06-30 05:52:41','Opening Balance',34.67,'2025-06-30 05:53:27',42,483,9283),
+(65799,'2025-06-30 06:06:55','Opening Balance',50,'2025-06-30 06:07:32',42,483,9284);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11575,4 +11591,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-29 13:02:53
+-- Dump completed on 2025-06-30  2:31:10
