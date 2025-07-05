@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9285 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9301 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2081,7 +2081,23 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9281,'Assets:Fixed Assets:Electronic Wallets:GBCash','GBCash',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 05:34:16'),
 (9282,'Assets:Fixed Assets:Electronic Wallets:Google Play Points','Google Play Points',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 05:46:36'),
 (9283,'Assets:Fixed Assets:Electronic Wallets:Google Play Balance','Google Play Balance',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 05:53:12'),
-(9284,'Assets:Fixed Assets:Electronic Wallets:PhonePe Gift Card','PhonePe Gift Card',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 06:07:20');
+(9284,'Assets:Fixed Assets:Electronic Wallets:PhonePe Gift Card','PhonePe Gift Card',15,'CASH','','CURRENCY','INR',42,'F','F','2025-06-30 06:07:20'),
+(9285,'Assets:Receivable Assets:People Debits:Hamza Koya Roll Shop Palazhi','Hamza Koya Roll Shop Palazhi',23,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:37:30'),
+(9286,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works','Scale Up Business Builder CRM Mentoring Works',9248,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:41:40'),
+(9287,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Transportation','Transportation',9286,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:41:55'),
+(9288,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Transportation:Public','Public',9287,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:42:07'),
+(9289,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Transportation:Public:Bus Fair','Bus Fair',9288,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:42:18'),
+(9290,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Transportation:Public:Auto Fair','Auto Fair',9288,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:42:31'),
+(9291,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Transportation:Public:Train Fair','Train Fair',9288,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:42:45'),
+(9292,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Foods','Foods',9286,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:42:55'),
+(9293,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Foods:Breakfast','Breakfast',9292,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:43:06'),
+(9294,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Foods:Lunch','Lunch',9292,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:43:15'),
+(9295,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Foods:Dinner','Dinner',9292,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:43:32'),
+(9296,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Foods:Snacks','Snacks',9292,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:43:43'),
+(9297,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Welfare Expenses','Welfare Expenses',9286,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:43:58'),
+(9298,'Income:Money Lending Charges:Farseen 30k for His Sister Jewellery Loan Clearance (Also Includes Balance from 30k for His Car Loan Clearance)','Farseen 30k for His Sister Jewellery Loan Clearance (Also Includes Balance from 30k for His Car Loan Clearance)',9216,'INCOME','','CURRENCY','INR',42,'F','F','2025-07-05 03:36:16'),
+(9299,'Liabilities:Loans:Bajaj Personal Loan 73k EMI X Monthly on 2nd Day','Bajaj Personal Loan 73k EMI X Monthly on 2nd Day',4399,'LIABILITY','','CURRENCY','INR',42,'F','F','2025-07-05 03:39:08'),
+(9300,'Income:Rewards:Navi Pay','Navi Pay',678,'INCOME','','CURRENCY','INR',42,'F','F','2025-07-05 03:42:37');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2310,7 +2326,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65800 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65846 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11478,7 +11494,7 @@ INSERT INTO `transactionsv2` VALUES (4,'2018-06-02 11:30:00','Shave - shapes',50
 (65783,'2025-06-12 03:47:36','Initial Balance',25.15,'2025-06-12 03:47:55',41,483,8935),
 (65784,'2025-06-12 03:52:36','Cash for transfer (not transferred yet)',1500,'2025-06-12 03:49:05',41,688,6),
 (65790,'2025-06-29 13:02:40','Opening Balance',4,'2025-06-29 13:02:59',42,483,8862),
-(65786,'2025-06-29 11:43:43','Opening Balance',13839.32,'2025-06-29 11:44:08',42,483,8935),
+(65786,'2025-06-28 09:00:21','Opening Balance',14033.32,'2025-07-05 03:14:49',42,483,8935),
 (65787,'2025-06-29 12:03:29','Opening Balance',360,'2025-06-29 12:03:47',42,483,9276),
 (65788,'2025-06-29 12:48:07','Opening Balance',50,'2025-06-29 12:48:54',42,483,9277),
 (65789,'2025-06-29 12:57:00','Opening Balance',12.45,'2025-06-29 12:57:34',42,483,9190),
@@ -11490,7 +11506,53 @@ INSERT INTO `transactionsv2` VALUES (4,'2018-06-02 11:30:00','Shave - shapes',50
 (65796,'2025-06-30 05:33:59','Opening Balance',50,'2025-06-30 05:34:29',42,483,9281),
 (65797,'2025-06-30 05:45:57','Opening Balance',945,'2025-06-30 05:46:52',42,483,9282),
 (65798,'2025-06-30 05:52:41','Opening Balance',34.67,'2025-06-30 05:53:27',42,483,9283),
-(65799,'2025-06-30 06:06:55','Opening Balance',50,'2025-06-30 06:07:32',42,483,9284);
+(65799,'2025-06-30 06:06:55','Opening Balance',50,'2025-06-30 06:07:32',42,483,9284),
+(65800,'2025-06-26 09:00:29','Opening Balance',13,'2025-07-05 02:40:40',42,483,6),
+(65801,'2025-06-28 09:02:50','Transfer for Cash Via. Hamza Koya Roll Shop Palazhi',100,'2025-07-05 03:16:00',42,8935,9285),
+(65802,'2025-06-28 09:00:05','Transfer for Cash Via. Hamza Koya Roll Shop Palazhi',100,'2025-07-05 02:40:20',42,9285,6),
+(65803,'2025-06-28 10:00:58','Hi Lite Business Park to Kozhikode Puthiya Stand Bus Fair',15,'2025-07-05 02:44:47',42,6,9289),
+(65804,'2025-06-28 10:05:58','Kozhikode Puthiya Stand to Parappangadi Bus Fair - Ticket 38, May given 40',38,'2025-07-05 02:45:27',42,6,9289),
+(65805,'2025-06-28 10:10:58','Parappangadi to Puthentheru Bus Fair',20,'2025-07-05 02:45:45',42,6,9289),
+(65806,'2025-06-29 10:00:58','Opening Balance (for transfer)',700,'2025-07-05 02:47:05',42,483,38),
+(65807,'2025-06-29 10:05:58','Credit Clearance (for transfer)',700,'2025-07-05 02:47:31',42,38,6),
+(65808,'2025-06-29 10:10:58','Mother for Kolathola Marriage Bus Fee',140,'2025-07-05 02:48:18',42,6,8763),
+(65809,'2025-06-29 18:00:15','Transfer for Cash Via. Hisham Banee Ishaque K Brother',500,'2025-07-05 03:19:32',42,8935,688),
+(65810,'2025-06-30 10:04:29','Transfer for Cash Via. Hisham Banee Ishaque K Brother',500,'2025-07-05 02:49:44',42,688,6),
+(65811,'2025-06-30 10:00:29','Transfer for Cash Via. Machingal Saidalavi Jaram',600,'2025-07-05 02:50:04',42,8935,3871),
+(65812,'2025-06-30 10:05:29','Transfer for Cash Via. Machingal Saidalavi Jaram',600,'2025-07-05 02:50:04',42,3871,6),
+(65813,'2025-06-30 10:05:01','Transfer for Cash Via. Hisham Banee Ishaque K Brother',2000,'2025-07-05 03:01:47',42,8935,688),
+(65814,'2025-06-30 10:06:00','Transfer for Cash Via. Hisham Banee Ishaque K Brother',2000,'2025-07-05 03:01:13',42,688,6),
+(65815,'2025-06-29 09:00:42','Opening Balance - 299 for his Airtel Recharge',299,'2025-07-05 03:30:10',42,483,3871),
+(65816,'2025-07-01 10:05:58','Credit Clearance',500,'2025-07-05 02:52:02',42,3871,6),
+(65817,'2025-07-02 10:00:58','Taken by Insha as behalf of Hisham',10,'2025-07-05 02:52:50',42,6,688),
+(65818,'2025-07-02 10:30:55','Transfer for Cash Via. Hisham Banee Ishaque K Brother',2000,'2025-07-05 02:53:45',42,8935,688),
+(65819,'2025-07-02 10:31:55','Transfer for Cash Via. Hisham Banee Ishaque K Brother',2000,'2025-07-05 02:53:45',42,688,6),
+(65820,'2025-07-02 10:32:55','Transfer for Cash Via. Hisham Banee Ishaque K Brother',350,'2025-07-05 02:53:51',42,8935,688),
+(65821,'2025-07-02 10:35:55','Transfer for Cash Via. Hisham Banee Ishaque K Brother',350,'2025-07-05 02:53:51',42,688,6),
+(65822,'2025-07-04 10:00:58','Short 2 x1, 1 x2',4,'2025-07-05 02:54:56',42,6,6869),
+(65823,'2025-07-04 11:00:16','Cash for Deposit on Account Via. Hisham Banee Ishaque K Brother',6500,'2025-07-05 02:56:16',42,6,688),
+(65824,'2025-07-04 11:05:00','Cash for Deposit on Account Via. Hisham Banee Ishaque K Brother - Paid as 1500, 2000 & 3000',6500,'2025-07-05 03:46:17',42,688,8935),
+(65825,'2025-07-04 11:45:58','Mother for Thakkali, Pacha Mulak & Mitayi (for chillara of 0.5)',18,'2025-07-05 02:57:32',42,6,8753),
+(65826,'2025-07-04 11:50:58','Insha for X',2,'2025-07-05 02:57:54',42,6,8762),
+(65827,'2025-07-04 12:00:56','Transfer for Cash, Transfer 800, Given 700, Balance 100 will give on July 5th 2025 Via. Hisham Banee Ishaque K Brother',800,'2025-07-05 02:59:40',42,8935,688);
+INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for Cash, Transfer 800, Given 700, Balance 100 will give on July 5th 2025 Via. Hisham Banee Ishaque K Brother',700,'2025-07-05 02:59:52',42,688,6),
+(65829,'2025-07-04 13:00:02','Short 1 x1',1,'2025-07-05 03:00:32',42,6,6869),
+(65830,'2025-06-28 09:01:58','Tea at Hamza Koya Roll Shop Palazhi',10,'2025-07-05 03:15:40',42,8935,9293),
+(65831,'2025-06-28 09:03:28','Tea 10, Parippu Vada 12, Pazham Pori 12 at Night Hub Puthentheru',34,'2025-07-05 03:17:40',42,8935,9293),
+(65832,'2025-06-28 09:08:28','Puthentheru to Home Favas DYFI Jaram Auto',50,'2025-07-05 03:18:22',42,8935,9290),
+(65833,'2025-06-29 09:00:32','Opening Balance 5000 + 2000 = 7000, 5500 Cash from Credit Card + 660 Charges= 6160, 7000 + 6160 = 13160',13160,'2025-07-05 03:23:49',42,483,2681),
+(65834,'2025-06-29 21:00:32','Credit Clearance Transfer (for Credit Card Bill Payment)',6110,'2025-07-05 03:25:07',42,2681,8935),
+(65835,'2025-06-29 09:15:16','Opening Balance, June 2025 Bill Amount - Airtel 299 Banee Recharge',299,'2025-07-05 03:26:19',42,9138,483),
+(65836,'2025-06-30 09:15:16','June 2025 Bill Clearance',299,'2025-07-05 03:27:17',42,8935,9138),
+(65837,'2025-06-30 10:04:51','Airtel 219 Recharge for Other Number',219,'2025-07-05 03:32:05',42,8935,3871),
+(65838,'2025-07-01 09:00:47','Interest till 30 June 2025',132,'2025-07-05 03:33:44',42,9069,8935),
+(65839,'2025-07-02 08:00:47','iPhone Bajaj EMI Payment',3554,'2025-07-05 03:34:47',42,8935,8740),
+(65840,'2025-07-02 08:05:47','First Fine for Bajaj EMI iPhone',500,'2025-07-05 03:37:02',42,9298,8740),
+(65841,'2025-07-02 08:10:47','Second Fine for Bajaj EMI iPhone',1500,'2025-07-05 03:37:14',42,9298,8740),
+(65842,'2025-07-02 09:00:28','Opening Balance, 73k + Interest',7300,'2025-07-05 03:40:10',42,9299,483),
+(65843,'2025-07-02 10:31:28','June 2025 EMI Clearance',3255,'2025-07-05 03:41:02',42,8935,9299),
+(65844,'2025-07-02 12:00:10','Cashback for UPI Transactions',8,'2025-07-05 03:43:21',42,9300,8935),
+(65845,'2025-07-04 21:00:33','for his emi payment',5500,'2025-07-05 03:47:13',42,8935,2681);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11591,4 +11653,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-30  2:31:10
+-- Dump completed on 2025-07-05  2:20:37
