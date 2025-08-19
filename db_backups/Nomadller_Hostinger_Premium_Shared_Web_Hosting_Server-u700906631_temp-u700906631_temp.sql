@@ -11638,7 +11638,6 @@ UNLOCK TABLES;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`u700906631_temp`@`127.0.0.1` SQL SECURITY DEFINER */
 /*!50001 VIEW `inserter_38_transactions_v2` AS select `transactionsv2`.`id` AS `id`,`transactionsv2`.`event_date_time` AS `event_date_time`,`transactionsv2`.`particulars` AS `particulars`,`transactionsv2`.`amount` AS `amount`,`transactionsv2`.`insertion_date_time` AS `insertion_date_time`,`transactionsv2`.`inserter_id` AS `inserter_id`,`transactionsv2`.`from_account_id` AS `from_account_id`,`transactionsv2`.`to_account_id` AS `to_account_id` from `transactionsv2` where `transactionsv2`.`inserter_id` = 38 order by `transactionsv2`.`event_date_time` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
