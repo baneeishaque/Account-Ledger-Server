@@ -2135,7 +2135,7 @@ DROP TABLE IF EXISTS `inserter_38_transactions_v2`;
 /*!50001 DROP VIEW IF EXISTS `inserter_38_transactions_v2`*/;
 SET @saved_cs_client     = @@character_set_client;
 /*!50503 SET character_set_client = utf8mb4 */;
-/*!50001 CREATE VIEW `inserter_38_transactions_v2` AS SELECT 
+/*!50001 CREATE VIEW `inserter_38_transactions_v2` AS SELECT
  1 AS `id`,
  1 AS `event_date_time`,
  1 AS `particulars`,
