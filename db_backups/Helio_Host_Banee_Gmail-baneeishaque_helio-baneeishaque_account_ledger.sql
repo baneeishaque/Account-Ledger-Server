@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9309 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9311 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2105,7 +2105,9 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9305,'Assets:Fixed Assets:Electronic Wallets:EaseMyDeal Wallet','EaseMyDeal Wallet',15,'CASH','','CURRENCY','INR',44,'F','F','2025-09-09 08:06:19'),
 (9306,'Assets:Fixed Assets:Electronic Wallets:EaseMyDeal Wallet:EaseMyDeal Wallet - Banee Ishaque K','EaseMyDeal Wallet - Banee Ishaque K',9305,'CASH','','CURRENCY','INR',44,'F','F','2025-09-09 08:06:43'),
 (9307,'Assets:Assets by User Engaging Strategies:CheQ Coins','CheQ Coins',9054,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:09:00'),
-(9308,'Assets:Assets by User Engaging Strategies:CheQ Coins:CheQ Coins - Babee Ishaque K','CheQ Coins - Babee Ishaque K',9307,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:09:23');
+(9308,'Assets:Assets by User Engaging Strategies:CheQ Coins:CheQ Coins - Babee Ishaque K','CheQ Coins - Babee Ishaque K',9307,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:09:23'),
+(9309,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:AI Agents Development Works','AI Agents Development Works',123,'RECEIVABLE','','CURRENCY','INR',44,'F','F','2025-09-09 20:30:30'),
+(9310,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:AI Agents Development Works:Create AI Agent for Requirements to Markdown','Create AI Agent for Requirements to Markdown',9309,'RECEIVABLE','','CURRENCY','INR',44,'F','F','2025-09-09 20:31:30');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11684,4 +11686,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-09  6:49:30
+-- Dump completed on 2025-09-09 18:44:53
