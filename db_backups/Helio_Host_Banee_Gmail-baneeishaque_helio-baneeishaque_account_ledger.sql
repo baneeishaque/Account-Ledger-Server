@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9301 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9309 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2097,7 +2097,15 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9297,'Assets:Receivable Assets:Service Charges:Development Works:Mentoring Works:Scale Up Business Builder CRM Mentoring Works:Welfare Expenses','Welfare Expenses',9286,'RECEIVABLE','','CURRENCY','INR',42,'F','F','2025-07-05 02:43:58'),
 (9298,'Income:Money Lending Charges:Farseen 30k for His Sister Jewellery Loan Clearance (Also Includes Balance from 30k for His Car Loan Clearance)','Farseen 30k for His Sister Jewellery Loan Clearance (Also Includes Balance from 30k for His Car Loan Clearance)',9216,'INCOME','','CURRENCY','INR',42,'F','F','2025-07-05 03:36:16'),
 (9299,'Liabilities:Loans:Bajaj Personal Loan 73k EMI X Monthly on 2nd Day','Bajaj Personal Loan 73k EMI X Monthly on 2nd Day',4399,'LIABILITY','','CURRENCY','INR',42,'F','F','2025-07-05 03:39:08'),
-(9300,'Income:Rewards:Navi Pay','Navi Pay',678,'INCOME','','CURRENCY','INR',42,'F','F','2025-07-05 03:42:37');
+(9300,'Income:Rewards:Navi Pay','Navi Pay',678,'INCOME','','CURRENCY','INR',42,'F','F','2025-07-05 03:42:37'),
+(9301,'Assets:Assets by User Engaging Strategies:CRED Gold','CRED Gold',9054,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 07:59:14'),
+(9302,'Assets:Assets by User Engaging Strategies:CRED Gold:CRED Gold - Banee Ishaque K','CRED Gold - Banee Ishaque K',9301,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 07:59:44'),
+(9303,'Assets:Assets by User Engaging Strategies:Navi Coins','Navi Coins',9054,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:04:13'),
+(9304,'Assets:Assets by User Engaging Strategies:Navi Coins:Navi Coins - Banee Ishaque K','Navi Coins - Banee Ishaque K',9303,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:04:54'),
+(9305,'Assets:Fixed Assets:Electronic Wallets:EaseMyDeal Wallet','EaseMyDeal Wallet',15,'CASH','','CURRENCY','INR',44,'F','F','2025-09-09 08:06:19'),
+(9306,'Assets:Fixed Assets:Electronic Wallets:EaseMyDeal Wallet:EaseMyDeal Wallet - Banee Ishaque K','EaseMyDeal Wallet - Banee Ishaque K',9305,'CASH','','CURRENCY','INR',44,'F','F','2025-09-09 08:06:43'),
+(9307,'Assets:Assets by User Engaging Strategies:CheQ Coins','CheQ Coins',9054,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:09:00'),
+(9308,'Assets:Assets by User Engaging Strategies:CheQ Coins:CheQ Coins - Babee Ishaque K','CheQ Coins - Babee Ishaque K',9307,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:09:23');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2326,7 +2334,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65854 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65865 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11560,7 +11568,18 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65850,'2025-09-09 06:20:00','Transfer',28.46,'2025-09-09 07:16:15',44,8810,8935),
 (65851,'2025-09-09 06:25:00','for Hameed VP CB 771',748.05,'2025-09-09 07:17:52',44,8935,9190),
 (65852,'2025-09-09 06:30:00','Current Bill 771',771,'2025-09-09 07:24:40',44,9190,5159),
-(65853,'2025-09-09 06:35:00','for Current Bill 771',771,'2025-09-09 07:25:13',44,5159,6);
+(65853,'2025-09-09 06:35:00','for Current Bill 771',771,'2025-09-09 07:25:13',44,5159,6),
+(65854,'2025-09-09 06:21:00','for UPI Transfer from Wallet (Via. Pocket UPI) to Bank',0.28,'2025-09-09 07:44:01',44,9072,8810),
+(65855,'2025-09-09 06:36:00','for Hameed VP CB 771 Payment',11,'2025-09-09 07:46:53',44,9095,9092),
+(65856,'2025-09-09 06:41:00','Transfer',11,'2025-09-09 07:48:05',44,9092,9190),
+(65857,'2025-09-09 06:46:00','Initial Balance',21,'2025-09-09 08:02:35',44,483,9187),
+(65858,'2025-09-09 06:51:00','Initial Balance',10.83,'2025-09-09 08:03:05',44,483,9302),
+(65859,'2025-09-09 06:56:00','Initial Balance',4,'2025-09-09 08:05:39',44,483,9304),
+(65860,'2025-09-09 07:01:00','Initial Balance',11,'2025-09-09 08:07:11',44,483,9306),
+(65861,'2025-09-09 07:06:00','Initial Balance',21.25,'2025-09-09 08:08:08',44,483,3781),
+(65862,'2025-09-09 07:11:00','Initial Balance',150,'2025-09-09 08:10:03',44,483,9308),
+(65863,'2025-09-09 07:16:00','Initial Balance',50,'2025-09-09 08:10:54',44,483,9281),
+(65864,'2025-09-09 07:21:00','Initial Balance',4.3,'2025-09-09 08:13:19',44,483,9279);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11663,4 +11682,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-09  2:00:22
+-- Dump completed on 2025-09-09  2:52:52
