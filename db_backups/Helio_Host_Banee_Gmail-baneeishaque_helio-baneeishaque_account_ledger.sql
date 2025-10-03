@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9311 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9318 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2107,7 +2107,14 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9307,'Assets:Assets by User Engaging Strategies:CheQ Coins','CheQ Coins',9054,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:09:00'),
 (9308,'Assets:Assets by User Engaging Strategies:CheQ Coins:CheQ Coins - Babee Ishaque K','CheQ Coins - Babee Ishaque K',9307,'ASSET','','CURRENCY','INR',44,'F','F','2025-09-09 08:09:23'),
 (9309,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:AI Agents Development Works','AI Agents Development Works',123,'RECEIVABLE','','CURRENCY','INR',44,'F','F','2025-09-09 20:30:30'),
-(9310,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:AI Agents Development Works:Create AI Agent for Requirements to Markdown','Create AI Agent for Requirements to Markdown',9309,'RECEIVABLE','','CURRENCY','INR',44,'F','F','2025-09-09 20:31:30');
+(9310,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:AI Agents Development Works:Create AI Agent for Requirements to Markdown','Create AI Agent for Requirements to Markdown',9309,'RECEIVABLE','','CURRENCY','INR',44,'F','F','2025-09-09 20:31:30'),
+(9311,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works','Web Mobile Platform Development Works',122,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:11:10'),
+(9312,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works','CRM Development Works',9311,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:11:36'),
+(9313,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works','NestJS React Flutter Platform Development Works',9312,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:12:47'),
+(9314,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work','ScaleUp Business Builder Freezing Work',9313,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:13:31'),
+(9315,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work:Transportation','Transportation',9314,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:14:04'),
+(9316,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work:Transportation:Public','Public',9315,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:20:25'),
+(9317,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work:Transportation:Public:Bus Fair','Bus Fair',9316,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:20:49');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2336,7 +2343,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65867 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65869 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11583,7 +11590,9 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65863,'2025-09-09 07:16:00','Initial Balance',50,'2025-09-09 08:10:54',44,483,9281),
 (65864,'2025-09-09 07:21:00','Initial Balance',4.3,'2025-09-09 08:13:19',44,483,9279),
 (65865,'2025-09-09 10:00:01','Passport Challan Pay 1500 + Gateway Charges 17.7',1517.7,'2025-09-09 10:53:50',44,9138,688),
-(65866,'2025-09-09 09:59:00','Initial Balance',548,'2025-09-09 11:40:49',44,9138,483);
+(65866,'2025-09-09 09:59:00','Initial Balance',548,'2025-09-09 11:40:49',44,9138,483),
+(65867,'2025-10-03 08:45:00','Initial balance',135,'2025-10-03 09:08:36',45,483,6),
+(65868,'2025-10-03 08:58:31','Puthentheru to Ramanattukara',38,'2025-10-03 09:22:12',45,6,9317);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11599,7 +11608,7 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=243 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=244 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11655,7 +11664,8 @@ INSERT INTO `users` VALUES (0,'banee_ishaque_k_27_05_2018','9895204814'),
 (41,'banee_ishaque_k_12_06_2025_02_45','9895204814'),
 (42,'banee_ishaque_k_29_06_2025_09_00','9895204814'),
 (43,'banee_ishaque_k_30_08_2025_13_00','9895204814'),
-(44,'banee_ishaque_k_09_09_2025_06_00','9895204814');
+(44,'banee_ishaque_k_09_09_2025_06_00','9895204814'),
+(45,'banee_ishaque_k_03_10_2025_08_45','9895204814');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11686,4 +11696,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-09 18:44:53
+-- Dump completed on 2025-10-03  6:47:36
