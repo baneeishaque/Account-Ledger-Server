@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.43, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.44, for Linux (x86_64)
 --
 -- Host: 64.62.151.106    Database: baneeishaque_account_ledger
 -- ------------------------------------------------------
@@ -11710,4 +11710,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-26 13:00:48
+-- Dump completed on 2025-11-19 18:49:09
