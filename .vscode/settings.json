@@ -2,4 +2,7 @@
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": ".github/workflows/database-backup.yml",
   },
+  "cSpell.words": [
+    "Banee",
+  ],
 }
