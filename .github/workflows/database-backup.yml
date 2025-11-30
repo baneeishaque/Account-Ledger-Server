@@ -18,11 +18,11 @@ on:
 
 jobs:
   backup:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Update package repository
         run: sudo apt-get update
@@ -37,52 +37,20 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
           SERVER_NAME: ${{ secrets.SERVER_NAME }}
-        run: |
-          mkdir -p db_backups
-          BACKUP_FILE="db_backups/${SERVER_NAME}-${DB_USER}-${DB_NAME}.sql"
-          mysqldump --column-statistics=0 -h $DB_HOST -u $DB_USER -p"$DB_PASSWORD" $DB_NAME > "$BACKUP_FILE"
-          sed -i 's/),(/),\n(/g' "$BACKUP_FILE"
+        run: bash .github/scripts/backup_database.bash
 
       - name: Configure Git
         uses: fregante/setup-git-user@v2.0.2
 
       - name: Check for Changes
         id: check_changes
-        run: |
-          DB_FILE=$(ls -t db_backups/*.sql | head -n 1)
-
-          DIFF_OUTPUT=$(git diff -- "$DB_FILE")
-
-          # Process the diff output to remove irrelevant lines
-          CLEANED_DIFF=$(echo "$DIFF_OUTPUT" | sed -E '
-              /^diff --/d;                          # Remove diff metadata lines
-              /^index /d;                           # Remove index lines
-              /^--- a/d;                            # Remove old file path
-              /^\+\+\+ b/d;                         # Remove new file path
-              /^@@ /d;                              # Remove hunk headers
-              /^[[:space:]]*\/\*!/d;                # Remove comments starting with /*!
-              /^[+-]-- Dump completed on/d;         # Remove added or removed "Dump completed on" lines
-              /^[[:space:]]*$/d                     # Remove blank or whitespace-only lines
-          ')
-
-          # Check if the cleaned diff output is empty or contains meaningful changes
-          if [ -z "$CLEANED_DIFF" ]; then
-              echo "No meaningful changes detected."
-              echo "changed=false" >> "$GITHUB_ENV"
-          else
-              echo "There are meaningful database changes."
-              echo "changed=true" >> "$GITHUB_ENV"
-          fi
+        run: bash .github/scripts/check_changes.bash
 
       - name: Add and Commit Changes
         if: env.changed == 'true'
         env:
           SERVER_NAME: ${{ secrets.SERVER_NAME }}
-        run: |
-          DB_FILE=$(ls -t db_backups/*.sql | head -n 1)
-          git add $DB_FILE
-          DB_TIMESTAMP=$(TZ='Asia/Kolkata' date -r $DB_FILE "+%d-%m-%Y %H-%M-%S IST")
-          git commit -m "Added DB Backup file $(basename $DB_FILE) from ${SERVER_NAME} On ${DB_TIMESTAMP}"
+        run: bash .github/scripts/add_and_commit_changes.bash
 
       - name: Push Changes to Master
         if: env.changed == 'true'
