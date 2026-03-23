@@ -2343,7 +2343,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65886 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65887 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11609,7 +11609,8 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65882,'2026-03-21 20:35:30','Initial Balance',16643,'2026-03-21 20:32:01',48,483,8935),
 (65883,'2026-03-23 11:00:00','Medical Expense - Consultation + Medicine (Accompanied by Father)',1120,'2026-03-23 11:38:16',48,8935,8763),
 (65884,'2026-03-23 11:05:00','Cashback for Transfer of 1120 from HDFC to Father',4,'2026-03-23 11:40:17',48,826,9284),
-(65885,'2026-03-23 11:00:00','Initial Balance',12.5,'2026-03-23 11:42:28',48,483,9284);
+(65885,'2026-03-23 11:00:00','Initial Balance',12.5,'2026-03-23 11:42:28',48,483,9284),
+(65886,'2026-03-23 18:18:37','for newdils',20,'2026-03-23 20:19:13',48,6,8762);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11716,4 +11717,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-23  8:10:16
+-- Dump completed on 2026-03-23 19:29:28
