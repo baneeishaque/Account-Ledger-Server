@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.44, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.45, for Linux (x86_64)
 --
 -- Host: 64.62.151.106    Database: baneeishaque_account_ledger
 -- ------------------------------------------------------
@@ -2343,7 +2343,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65881 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65886 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11604,7 +11604,12 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65877,'2025-10-25 10:00:00','for Puthentheru Palli monthly fee',100,'2025-10-26 16:59:21',47,6,8763),
 (65878,'2025-10-26 10:05:00','for sunlight',110,'2025-10-26 16:59:48',47,6,8763),
 (65879,'2025-10-22 17:01:00','Hameed 300 Via. Mother - Given on 17/10/2025 for his wife Airtel recharge of 299 pack',300,'2025-10-26 17:06:45',47,483,6),
-(65880,'2025-10-26 17:00:00','10, Maybe 10x1',10,'2025-10-26 17:09:45',47,6,6869);
+(65880,'2025-10-26 17:00:00','10, Maybe 10x1',10,'2025-10-26 17:09:45',47,6,6869),
+(65881,'2026-03-21 20:30:30','Initial Balance',690,'2026-03-21 20:31:28',48,483,6),
+(65882,'2026-03-21 20:35:30','Initial Balance',16643,'2026-03-21 20:32:01',48,483,8935),
+(65883,'2026-03-23 11:00:00','Medical Expense - Consultation + Medicine (Accompanied by Father)',1120,'2026-03-23 11:38:16',48,8935,8763),
+(65884,'2026-03-23 11:05:00','Cashback for Transfer of 1120 from HDFC to Father',4,'2026-03-23 11:40:17',48,826,9284),
+(65885,'2026-03-23 11:00:00','Initial Balance',12.5,'2026-03-23 11:42:28',48,483,9284);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11620,7 +11625,7 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=244 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=245 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11679,7 +11684,8 @@ INSERT INTO `users` VALUES (0,'banee_ishaque_k_27_05_2018','9895204814'),
 (44,'banee_ishaque_k_09_09_2025_06_00','9895204814'),
 (45,'banee_ishaque_k_03_10_2025_08_45','9895204814'),
 (46,'banee_ishaque_k_11_10_2025_02_25','9895204814'),
-(47,'banee_ishaque_k_22_10_2025_16_35','9895204814');
+(47,'banee_ishaque_k_22_10_2025_16_35','9895204814'),
+(48,'banee_ishaque_k_21_03_2026_20_15','9895204814');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11710,4 +11716,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-26  6:53:26
+-- Dump completed on 2026-03-23  8:10:16
