@@ -2343,7 +2343,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65887 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65892 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11610,7 +11610,12 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65883,'2026-03-23 11:00:00','Medical Expense - Consultation + Medicine (Accompanied by Father)',1120,'2026-03-23 11:38:16',48,8935,8763),
 (65884,'2026-03-23 11:05:00','Cashback for Transfer of 1120 from HDFC to Father',4,'2026-03-23 11:40:17',48,826,9284),
 (65885,'2026-03-23 11:00:00','Initial Balance',12.5,'2026-03-23 11:42:28',48,483,9284),
-(65886,'2026-03-23 18:18:37','for newdils',20,'2026-03-23 20:19:13',48,6,8762);
+(65886,'2026-03-23 18:18:37','for newdils',20,'2026-03-23 20:19:13',48,6,8762),
+(65887,'2026-03-24 09:00:20','for school photo 70 + send off fee 30',100,'2026-03-26 18:26:44',48,6,8762),
+(65888,'2026-03-23 18:00:20','for biscuit',10,'2026-03-26 18:28:41',48,6,8762),
+(65889,'2026-03-26 15:00:20','Transfer for cash Via. Hisham Banee Ishaque K Brother',500,'2026-03-26 18:31:41',48,8935,688),
+(65890,'2026-03-26 15:05:20','Transfer for cash Via. Hisham Banee Ishaque K Brother',500,'2026-03-26 18:31:44',48,688,6),
+(65891,'2026-03-26 18:32:11','for coffee powder',5,'2026-03-26 18:32:40',48,2,8762);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11717,4 +11722,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-23 19:29:28
+-- Dump completed on 2026-03-26 14:06:42
