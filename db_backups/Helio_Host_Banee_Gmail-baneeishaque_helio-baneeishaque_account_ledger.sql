@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9318 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9325 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2114,7 +2114,14 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9314,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work','ScaleUp Business Builder Freezing Work',9313,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:13:31'),
 (9315,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work:Transportation','Transportation',9314,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:14:04'),
 (9316,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work:Transportation:Public','Public',9315,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:20:25'),
-(9317,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work:Transportation:Public:Bus Fair','Bus Fair',9316,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:20:49');
+(9317,'Assets:Receivable Assets:Service Charges:Development Works:Web Mobile Platform Development Works:CRM Development Works:NestJS React Flutter Platform Development Works:ScaleUp Business Builder Freezing Work:Transportation:Public:Bus Fair','Bus Fair',9316,'RECEIVABLE','','CURRENCY','INR',45,'F','F','2025-10-03 09:20:49'),
+(9318,'Assets:Receivable Assets:People Debits:Ayisha Deedi LVC','Ayisha Deedi LVC',23,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:01:36'),
+(9319,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works','Eclipse RCP Works',7669,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:08:01'),
+(9320,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore','DGS ICE - Siraj Wayanadan Bangalore',9319,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:08:45'),
+(9321,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026','Work Period - May 05 to 23 2026',9320,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:07'),
+(9322,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation','Transportation',9321,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:28'),
+(9323,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public','Public',9322,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:40'),
+(9324,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public:Bus Fair','Bus Fair',9323,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:56');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2343,7 +2350,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65892 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65897 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11615,7 +11622,12 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65888,'2026-03-23 18:00:20','for biscuit',10,'2026-03-26 18:28:41',48,6,8762),
 (65889,'2026-03-26 15:00:20','Transfer for cash Via. Hisham Banee Ishaque K Brother',500,'2026-03-26 18:31:41',48,8935,688),
 (65890,'2026-03-26 15:05:20','Transfer for cash Via. Hisham Banee Ishaque K Brother',500,'2026-03-26 18:31:44',48,688,6),
-(65891,'2026-03-26 18:32:11','for coffee powder',5,'2026-03-26 18:32:40',48,2,8762);
+(65891,'2026-03-26 18:32:11','for coffee powder',5,'2026-03-26 18:32:40',48,2,8762),
+(65892,'2026-05-23 14:52:00','Initial Balance',1462,'2026-05-25 04:57:47',50,483,6),
+(65893,'2026-05-23 14:57:00','Transfer for Cash (on 18/05/2026 09:58)',1000,'2026-05-25 05:03:16',50,8935,9318),
+(65894,'2026-05-23 15:02:00','Cash for Transfer (on 18/05/2026 09:58)',1000,'2026-05-25 05:03:39',50,9318,6),
+(65895,'2026-05-24 09:00:00','Tirur to Puthentheru Bus Fair',15,'2026-05-25 05:12:04',50,6,9324),
+(65896,'2026-05-24 09:05:00','for Comfort (Cloths freshner on Wash)',20,'2026-05-25 05:14:14',50,6,9153);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11724,4 +11736,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-24 23:00:05
+-- Dump completed on 2026-05-25  4:59:51
