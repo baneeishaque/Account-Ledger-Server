@@ -2350,7 +2350,7 @@ CREATE TABLE `transactionsv2` (
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65897 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65898 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11627,7 +11627,8 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65893,'2026-05-23 14:57:00','Transfer for Cash (on 18/05/2026 09:58)',1000,'2026-05-25 05:03:16',50,8935,9318),
 (65894,'2026-05-23 15:02:00','Cash for Transfer (on 18/05/2026 09:58)',1000,'2026-05-25 05:03:39',50,9318,6),
 (65895,'2026-05-24 09:00:00','Tirur to Puthentheru Bus Fair',15,'2026-05-25 05:12:04',50,6,9324),
-(65896,'2026-05-24 09:05:00','for Comfort (Cloths freshner on Wash)',20,'2026-05-25 05:14:14',50,6,9153);
+(65896,'2026-05-24 09:05:00','for Comfort (Cloths freshner on Wash)',20,'2026-05-25 05:14:14',50,6,9153),
+(65897,'2026-05-25 09:00:00','Ponnu for Sugar',47,'2026-05-26 22:45:34',50,6,8753);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11736,4 +11737,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-25  4:59:51
+-- Dump completed on 2026-05-26 20:29:24
