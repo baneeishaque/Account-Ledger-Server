@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9325 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9327 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2121,7 +2121,9 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',0,'ASSET',NULL,'CURRENCY','IN
 (9321,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026','Work Period - May 05 to 23 2026',9320,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:07'),
 (9322,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation','Transportation',9321,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:28'),
 (9323,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public','Public',9322,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:40'),
-(9324,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public:Bus Fair','Bus Fair',9323,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:56');
+(9324,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public:Bus Fair','Bus Fair',9323,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:56'),
+(9325,'${parentAccount.fullName}:$name','Evening Snacks',8888,'GROUP','','CURRENCY','INR',50,'F','F','2026-05-27 19:51:23'),
+(9326,'Expenses:Home Expenses:Foods:Evening Snacks','Evening Snacks',8888,'EXPENSE','','CURRENCY','INR',50,'F','F','2026-05-27 20:58:48');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11737,4 +11739,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-26 20:29:24
+-- Dump completed on 2026-05-27 16:23:10
