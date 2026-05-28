@@ -2351,7 +2351,9 @@ CREATE TABLE `transactionsv2` (
   `inserter_id` int(11) NOT NULL,
   `from_account_id` int(11) NOT NULL,
   `to_account_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `idx_from_account_id` (`from_account_id`),
+  KEY `idx_to_account_id` (`to_account_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=65898 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -11739,4 +11741,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-27 16:23:10
+-- Dump completed on 2026-05-28  4:48:26
