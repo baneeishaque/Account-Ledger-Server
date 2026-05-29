@@ -37,7 +37,8 @@ CREATE TABLE `accounts` (
   `insertion_date_time` datetime DEFAULT NULL,
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
-  KEY `parent_account_id` (`parent_account_id`)
+  KEY `parent_account_id` (`parent_account_id`),
+  CONSTRAINT `fk_accounts_parent` FOREIGN KEY (`parent_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=9327 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2126,6 +2127,44 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',NULL,'ASSET',NULL,'CURRENCY',
 (9326,'Expenses:Home Expenses:Foods:Evening Snacks','Evening Snacks',8888,'EXPENSE','','CURRENCY','INR',50,'F','F','2026-05-27 20:58:48');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_uca1400_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`baneeishaque_helio`@`%`*/ /*!50003 TRIGGER trg_acc_no_self_parent_ins BEFORE INSERT ON accounts
+             FOR EACH ROW
+               IF NEW.parent_account_id IS NOT NULL AND NEW.parent_account_id = NEW.account_id THEN
+                 SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='parent_account_id cannot equal account_id';
+               END IF */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_uca1400_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`baneeishaque_helio`@`%`*/ /*!50003 TRIGGER trg_acc_no_self_parent_upd BEFORE UPDATE ON accounts
+             FOR EACH ROW
+               IF NEW.parent_account_id IS NOT NULL AND NEW.parent_account_id = NEW.account_id THEN
+                 SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='parent_account_id cannot equal account_id';
+               END IF */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `configuration`
@@ -11743,4 +11782,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-29  3:03:52
+-- Dump completed on 2026-05-29  3:23:05
