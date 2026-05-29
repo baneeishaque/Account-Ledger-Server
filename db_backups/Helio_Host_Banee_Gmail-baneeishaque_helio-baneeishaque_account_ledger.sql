@@ -2353,7 +2353,9 @@ CREATE TABLE `transactionsv2` (
   `to_account_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_from_account_id` (`from_account_id`),
-  KEY `idx_to_account_id` (`to_account_id`)
+  KEY `idx_to_account_id` (`to_account_id`),
+  CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=65898 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -11741,4 +11743,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-29  2:57:30
+-- Dump completed on 2026-05-29  3:03:52
