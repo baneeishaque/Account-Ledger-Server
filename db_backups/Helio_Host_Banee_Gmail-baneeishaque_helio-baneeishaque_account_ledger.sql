@@ -2123,7 +2123,6 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',NULL,'ASSET',NULL,'CURRENCY',
 (9322,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation','Transportation',9321,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:28'),
 (9323,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public','Public',9322,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:40'),
 (9324,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public:Bus Fair','Bus Fair',9323,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:56'),
-(9325,'${parentAccount.fullName}:$name','Evening Snacks',8888,'GROUP','','CURRENCY','INR',50,'F','F','2026-05-27 19:51:23'),
 (9326,'Expenses:Home Expenses:Foods:Evening Snacks','Evening Snacks',8888,'EXPENSE','','CURRENCY','INR',50,'F','F','2026-05-27 20:58:48');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2395,7 +2394,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65898 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65915 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11673,7 +11672,24 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65894,'2026-05-23 15:02:00','Cash for Transfer (on 18/05/2026 09:58)',1000,'2026-05-25 05:03:39',50,9318,6),
 (65895,'2026-05-24 09:00:00','Tirur to Puthentheru Bus Fair',15,'2026-05-25 05:12:04',50,6,9324),
 (65896,'2026-05-24 09:05:00','for Comfort (Cloths freshner on Wash)',20,'2026-05-25 05:14:14',50,6,9153),
-(65897,'2026-05-25 09:00:00','Ponnu for Sugar',47,'2026-05-26 22:45:34',50,6,8753);
+(65897,'2026-05-25 09:00:00','Ponnu for Sugar',47,'2026-05-26 22:45:34',50,6,8753),
+(65898,'2026-05-25 10:00:00','Chicken Bonda x2 10x2 + Momos 10',30,'2026-06-01 06:50:00',50,6,9326),
+(65899,'2026-05-27 10:05:00','for Mylanchi',60,'2026-06-01 06:51:10',50,6,8762),
+(65900,'2026-05-25 10:10:00','Transfer for Cash',1500,'2026-06-01 07:02:05',50,8935,688),
+(65901,'2026-05-25 10:15:00','Cash for Transfer',1500,'2026-06-01 07:02:33',50,688,6),
+(65902,'2026-05-25 10:20:00','Transfer for Cash',2400,'2026-06-01 07:02:55',50,8935,688),
+(65903,'2026-05-25 10:25:00','Cash for Transfer',2400,'2026-06-01 07:03:03',50,688,6),
+(65904,'2026-05-28 10:30:00','Transfer for Cash',500,'2026-06-01 07:03:27',50,8935,688),
+(65905,'2026-05-28 10:35:00','Cash for Transfer',500,'2026-06-01 07:03:34',50,688,6),
+(65906,'2026-05-29 10:40:00','Cash for Transfer, C: 5300, T: 5000, B: 300',5300,'2026-06-01 07:17:26',50,6,9219),
+(65907,'2026-05-29 10:45:00','Cash for Transfer, C: 5300, T: 5000, B: 300',5000,'2026-06-01 07:20:18',50,9219,8935),
+(65908,'2026-05-29 10:50:00','Transfer for Cash',1000,'2026-06-01 07:22:48',50,8935,3671),
+(65909,'2026-05-29 10:55:00','Cash for Transfer',1000,'2026-06-01 07:22:57',50,3671,6),
+(65910,'2026-05-30 11:00:00','Mother for Sunlight Powder',110,'2026-06-01 07:24:34',50,6,9153),
+(65911,'2026-05-30 11:05:00','Transfer for Cash',300,'2026-06-01 07:25:56',50,8935,688),
+(65912,'2026-05-30 11:10:00','Cash for Transfer',300,'2026-06-01 07:26:05',50,688,6),
+(65913,'2026-05-31 11:15:00','Balance on Previous Money Transfer',300,'2026-06-01 07:28:23',50,9219,6),
+(65914,'2026-06-01 07:00:00','Shortage 8, Maybe 10x1 & Extra 1cx2',8,'2026-06-01 07:37:10',50,6,6869);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11782,4 +11798,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-29  3:23:05
+-- Dump completed on 2026-06-01  5:22:43
