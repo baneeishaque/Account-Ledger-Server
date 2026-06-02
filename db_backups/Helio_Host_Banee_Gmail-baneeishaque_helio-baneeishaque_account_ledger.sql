@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.45, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.46, for Linux (x86_64)
 --
 -- Host: 64.62.151.106    Database: baneeishaque_account_ledger
 -- ------------------------------------------------------
@@ -2394,7 +2394,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65915 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65918 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11689,7 +11689,10 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65911,'2026-05-30 11:05:00','Transfer for Cash',300,'2026-06-01 07:25:56',50,8935,688),
 (65912,'2026-05-30 11:10:00','Cash for Transfer',300,'2026-06-01 07:26:05',50,688,6),
 (65913,'2026-05-31 11:15:00','Balance on Previous Money Transfer',300,'2026-06-01 07:28:23',50,9219,6),
-(65914,'2026-06-01 07:00:00','Shortage 8, Maybe 10x1 & Extra 1cx2',8,'2026-06-01 07:37:10',50,6,6869);
+(65914,'2026-06-01 07:00:00','Shortage 8, Maybe 10x1 & Extra 1cx2',8,'2026-06-01 07:37:10',50,6,6869),
+(65915,'2026-06-01 10:00:00','CB: 4486, Airtal Immutty Thatha: 219, Total 4705',5000,'2026-06-02 21:03:32',50,3871,6),
+(65916,'2026-06-02 10:05:00','Transfer for Cash',1700,'2026-06-02 20:59:15',50,8935,688),
+(65917,'2026-06-02 10:10:00','Cash for Transfer',1700,'2026-06-02 20:59:22',50,688,6);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11798,4 +11801,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-01  5:22:43
+-- Dump completed on 2026-06-02 16:59:41
