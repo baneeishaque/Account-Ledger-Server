@@ -2394,7 +2394,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65918 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65929 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11692,7 +11692,18 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65914,'2026-06-01 07:00:00','Shortage 8, Maybe 10x1 & Extra 1cx2',8,'2026-06-01 07:37:10',50,6,6869),
 (65915,'2026-06-01 10:00:00','CB: 4486, Airtal Immutty Thatha: 219, Total 4705',5000,'2026-06-02 21:03:32',50,3871,6),
 (65916,'2026-06-02 10:05:00','Transfer for Cash',1700,'2026-06-02 20:59:15',50,8935,688),
-(65917,'2026-06-02 10:10:00','Cash for Transfer',1700,'2026-06-02 20:59:22',50,688,6);
+(65917,'2026-06-02 10:10:00','Cash for Transfer',1700,'2026-06-02 20:59:22',50,688,6),
+(65918,'2026-06-02 09:00:00','Transfer to Niyas',2200,'2026-06-04 15:50:54',50,8935,3871),
+(65919,'2026-06-03 09:05:00','Cash for Transfer to Niyas',2200,'2026-06-04 15:51:21',50,3871,6),
+(65920,'2026-06-02 11:00:00','Current Bill, Total 231, MobiKwik Wallet 17.86 + HDFC 213.14',213.14,'2026-06-04 16:53:16',50,8935,9219),
+(65921,'2026-06-02 11:05:00','Current Bill, Total 231, MobiKwik Wallet 17.86 + HDFC 213.14',17.86,'2026-06-04 17:00:09',50,8810,9219),
+(65922,'2026-06-03 19:00:00','Cash for Current Bill, Given 400, Balance 169 - Transfered from HDFC',400,'2026-06-04 17:00:31',50,9219,6),
+(65923,'2026-06-03 20:00:00','Cash for Current Bill, Given 400, Balance 169 - Transfered from HDFC',169,'2026-06-04 16:56:27',50,8935,9219),
+(65924,'2026-06-03 22:00:00','Transfer for Cash',1500,'2026-06-04 17:09:18',50,8935,688),
+(65925,'2026-06-03 22:05:00','Cash for Transfer',1500,'2026-06-04 17:09:23',50,688,6),
+(65926,'2026-06-04 17:00:00','Credit - will return within next Thursday (11-06-2026)',5000,'2026-06-04 17:54:26',50,6,9219),
+(65927,'2026-06-04 19:00:00','Cash for Transfer',4000,'2026-06-04 19:04:03',50,6,9219),
+(65928,'2026-06-04 19:05:00','Transfer for Cash',4000,'2026-06-04 19:04:08',50,9219,8935);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11801,4 +11812,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-02 16:59:41
+-- Dump completed on 2026-06-04 15:55:29
