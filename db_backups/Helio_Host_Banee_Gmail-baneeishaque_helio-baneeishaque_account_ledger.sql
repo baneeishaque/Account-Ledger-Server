@@ -2394,7 +2394,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65929 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65933 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11703,7 +11703,11 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65925,'2026-06-03 22:05:00','Cash for Transfer',1500,'2026-06-04 17:09:23',50,688,6),
 (65926,'2026-06-04 17:00:00','Credit - will return within next Thursday (11-06-2026)',5000,'2026-06-04 17:54:26',50,6,9219),
 (65927,'2026-06-04 19:00:00','Cash for Transfer',4000,'2026-06-04 19:04:03',50,6,9219),
-(65928,'2026-06-04 19:05:00','Transfer for Cash',4000,'2026-06-04 19:04:08',50,9219,8935);
+(65928,'2026-06-04 19:05:00','Transfer for Cash',4000,'2026-06-04 19:04:08',50,9219,8935),
+(65929,'2026-06-06 13:12:08','Cash for Transfer',1500,'2026-06-06 13:14:26',50,6,688),
+(65930,'2026-06-06 13:17:08','Transfer for Cash',1500,'2026-06-06 13:14:56',50,688,8935),
+(65931,'2026-06-06 13:22:08','Cash for Transfer',20,'2026-06-06 13:15:10',50,6,688),
+(65932,'2026-06-06 13:27:08','Transfer for Cash',20,'2026-06-06 13:15:17',50,688,8935);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11812,4 +11816,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-04 15:55:29
+-- Dump completed on 2026-06-06  9:06:27
