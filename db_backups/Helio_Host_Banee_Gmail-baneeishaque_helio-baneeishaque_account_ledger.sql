@@ -2394,7 +2394,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65933 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65943 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11704,10 +11704,17 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65926,'2026-06-04 17:00:00','Credit - will return within next Thursday (11-06-2026)',5000,'2026-06-04 17:54:26',50,6,9219),
 (65927,'2026-06-04 19:00:00','Cash for Transfer',4000,'2026-06-04 19:04:03',50,6,9219),
 (65928,'2026-06-04 19:05:00','Transfer for Cash',4000,'2026-06-04 19:04:08',50,9219,8935),
-(65929,'2026-06-06 13:12:08','Cash for Transfer',1500,'2026-06-06 13:14:26',50,6,688),
-(65930,'2026-06-06 13:17:08','Transfer for Cash',1500,'2026-06-06 13:14:56',50,688,8935),
-(65931,'2026-06-06 13:22:08','Cash for Transfer',20,'2026-06-06 13:15:10',50,6,688),
-(65932,'2026-06-06 13:27:08','Transfer for Cash',20,'2026-06-06 13:15:17',50,688,8935);
+(65931,'2026-06-06 13:22:00','Cash to Ponnu',20,'2026-06-06 13:15:00',50,6,688),
+(65932,'2026-06-06 13:27:08','Transfer for Cash to Ponnu',20,'2026-06-06 13:15:17',50,688,8935),
+(65933,'2026-06-06 16:00:00','for Medical Examination for Masilu Kayaral (On Puthentheru Clinic)',500,'2026-06-09 23:44:34',50,6,8763),
+(65934,'2026-06-06 16:05:00','Transfer for Cash',1500,'2026-06-09 23:49:19',50,8935,688),
+(65935,'2026-06-06 16:10:00','Cash for Transfer',1500,'2026-06-09 23:49:26',50,688,6),
+(65936,'2026-06-07 17:00:00','Cash for Transfer',1500,'2026-06-10 01:28:52',50,6,688),
+(65937,'2026-06-07 17:05:00','Transfer for Cash',1500,'2026-06-10 01:29:31',50,688,8935),
+(65938,'2026-06-09 17:10:00','Kothukuthiri for Banee',20,'2026-06-09 23:51:58',50,6,9153),
+(65939,'2026-06-09 17:15:00','Mitayi (On Kunjitti Kaka Store for Kothuku Thiri)',5,'2026-06-09 23:52:35',50,6,8762),
+(65940,'2026-06-09 20:00:00','Transfer for Cash',10000,'2026-06-09 23:53:51',50,8935,3341),
+(65941,'2026-06-09 20:05:00','Cash for Transfer',10000,'2026-06-09 23:53:54',50,3341,6);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11816,4 +11823,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-06  9:06:27
+-- Dump completed on 2026-06-09 20:24:48
