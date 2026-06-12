@@ -2394,7 +2394,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65944 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65947 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11715,7 +11715,10 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65939,'2026-06-09 17:15:00','Mitayi (On Kunjitti Kaka Store for Kothuku Thiri)',5,'2026-06-09 23:52:35',50,6,8762),
 (65940,'2026-06-09 20:00:00','Transfer for Cash',10000,'2026-06-09 23:53:51',50,8935,3341),
 (65941,'2026-06-09 20:05:00','Cash for Transfer',10000,'2026-06-09 23:53:54',50,3341,6),
-(65943,'2026-06-11 18:00:00','Credit Consolidation',5000,'2026-06-12 06:34:57',50,9219,6);
+(65943,'2026-06-11 18:00:00','Credit Consolidation',5000,'2026-06-12 06:34:57',50,9219,6),
+(65944,'2026-06-12 16:00:00','Cash for Transfer',16500,'2026-06-13 01:56:07',50,6,688),
+(65945,'2026-06-12 16:05:00','Transfer for Cash',10000,'2026-06-13 01:56:39',50,688,8935),
+(65946,'2026-06-12 16:05:00','Transfer for Cash',6500,'2026-06-13 01:56:47',50,688,8935);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11824,4 +11827,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-12  5:12:48
+-- Dump completed on 2026-06-12 20:33:27
