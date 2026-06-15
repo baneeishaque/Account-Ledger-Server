@@ -2394,7 +2394,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65950 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65958 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11721,7 +11721,15 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65946,'2026-06-12 16:05:00','Transfer for Cash',6500,'2026-06-13 01:56:47',50,688,8935),
 (65947,'2026-06-13 10:00:00','Rusk',30,'2026-06-14 10:21:51',50,6,2001),
 (65948,'2026-06-13 10:05:00','Biscuit - On Time of Rusk Buy',10,'2026-06-14 10:22:29',50,6,8762),
-(65949,'2026-06-13 10:10:00','Marker',10,'2026-06-14 10:22:37',50,6,8762);
+(65949,'2026-06-13 10:10:00','Marker',10,'2026-06-14 10:22:37',50,6,8762),
+(65950,'2026-06-14 10:00:00','Transfer for Cash',500,'2026-06-15 16:35:43',50,8935,688),
+(65951,'2026-06-14 08:00:00','Cash for Transfer',500,'2026-06-15 16:42:37',50,688,6),
+(65952,'2026-06-14 09:00:00','Transfer for Cash',1800,'2026-06-15 16:36:40',50,8935,3671),
+(65953,'2026-06-14 09:05:00','Cash for Transfer',1800,'2026-06-15 16:36:48',50,3671,6),
+(65954,'2026-06-15 09:10:00','Transfer for Cash',2500,'2026-06-15 16:37:28',50,8935,688),
+(65955,'2026-06-14 11:00:00','Cash for Transfer',2500,'2026-06-15 16:37:41',50,688,6),
+(65956,'2026-06-14 12:00:00','Transfer for Cash',1800,'2026-06-15 16:38:02',50,8935,688),
+(65957,'2026-06-15 12:05:00','Cash for Transfer',1800,'2026-06-15 16:38:39',50,688,6);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11830,4 +11838,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-14  5:14:35
+-- Dump completed on 2026-06-15 12:48:51
