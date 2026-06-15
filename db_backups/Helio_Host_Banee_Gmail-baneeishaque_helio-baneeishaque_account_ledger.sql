@@ -39,7 +39,7 @@ CREATE TABLE `accounts` (
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`),
   CONSTRAINT `fk_accounts_parent` FOREIGN KEY (`parent_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9327 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9329 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2123,7 +2123,9 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',NULL,'ASSET',NULL,'CURRENCY',
 (9322,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation','Transportation',9321,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:28'),
 (9323,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public','Public',9322,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:40'),
 (9324,'Assets:Receivable Assets:Service Charges:Development Works:Application Development Works:Java CLI Development Works:Eclipse RCP Works:DGS ICE - Siraj Wayanadan Bangalore:Work Period - May 05 to 23 2026:Transportation:Public:Bus Fair','Bus Fair',9323,'RECEIVABLE','','CURRENCY','INR',50,'F','F','2026-05-25 05:10:56'),
-(9326,'Expenses:Home Expenses:Foods:Evening Snacks','Evening Snacks',8888,'EXPENSE','','CURRENCY','INR',50,'F','F','2026-05-27 20:58:48');
+(9326,'Expenses:Home Expenses:Foods:Evening Snacks','Evening Snacks',8888,'EXPENSE','','CURRENCY','INR',50,'F','F','2026-05-27 20:58:48'),
+(9327,'Assets:Fixed Assets:Electronic Wallets:Amazon Pay:Amazon Pay Banee K:Amazon Pay Wallet Banee K','Amazon Pay Wallet Banee K',3781,'ASSET','','CURRENCY','INR',50,'F','F','2026-06-15 18:58:35'),
+(9328,'Assets:Fixed Assets:Electronic Wallets:Amazon Pay:Amazon Pay Banee K:Amazon Pay Gift Wallet Banee K','Amazon Pay Gift Wallet Banee K',3781,'ASSET','','CURRENCY','INR',50,'F','F','2026-06-15 18:59:30');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -2394,7 +2396,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65958 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65963 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11724,12 +11726,17 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65949,'2026-06-13 10:10:00','Marker',10,'2026-06-14 10:22:37',50,6,8762),
 (65950,'2026-06-14 10:00:00','Transfer for Cash',500,'2026-06-15 16:35:43',50,8935,688),
 (65951,'2026-06-14 08:00:00','Cash for Transfer',500,'2026-06-15 16:42:37',50,688,6),
-(65952,'2026-06-14 09:00:00','Transfer for Cash',1800,'2026-06-15 16:36:40',50,8935,3671),
+(65952,'2026-06-14 08:00:00','Transfer for Cash via. Amazon Pay Wallet',1800,'2026-06-15 19:03:08',50,8935,9327),
 (65953,'2026-06-14 09:05:00','Cash for Transfer',1800,'2026-06-15 16:36:48',50,3671,6),
 (65954,'2026-06-15 09:10:00','Transfer for Cash',2500,'2026-06-15 16:37:28',50,8935,688),
 (65955,'2026-06-14 11:00:00','Cash for Transfer',2500,'2026-06-15 16:37:41',50,688,6),
-(65956,'2026-06-14 12:00:00','Transfer for Cash',1800,'2026-06-15 16:38:02',50,8935,688),
-(65957,'2026-06-15 12:05:00','Cash for Transfer',1800,'2026-06-15 16:38:39',50,688,6);
+(65956,'2026-06-15 12:00:00','Transfer for Cash',1800,'2026-06-15 19:10:02',50,8935,688),
+(65957,'2026-06-15 12:05:00','Cash for Transfer',1800,'2026-06-15 16:38:39',50,688,6),
+(65958,'2026-06-14 09:00:00','Transfer for Cash',1800,'2026-06-15 19:04:54',50,9327,3671),
+(65959,'2026-06-14 09:04:00','Cashback for Amazon Pay Wallet Transfer',10,'2026-06-15 19:07:33',50,3771,9328),
+(65960,'2026-06-14 07:00:00','Opening Balance',791,'2026-06-15 19:13:29',50,483,9328),
+(65961,'2026-06-15 16:00:00','Ball Icecream',10,'2026-06-15 19:16:29',50,6,2001),
+(65962,'2026-06-15 16:05:00','Chicken Bonda for Mother 10 + Mitayies for Ponnu 10',20,'2026-06-15 19:17:25',50,6,9326);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11838,4 +11845,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-15 12:48:51
+-- Dump completed on 2026-06-15 21:29:47
