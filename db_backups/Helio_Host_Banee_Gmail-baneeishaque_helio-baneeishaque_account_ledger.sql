@@ -2396,7 +2396,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65963 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65969 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11736,7 +11736,13 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65959,'2026-06-14 09:04:00','Cashback for Amazon Pay Wallet Transfer',10,'2026-06-15 19:07:33',50,3771,9328),
 (65960,'2026-06-14 07:00:00','Opening Balance',791,'2026-06-15 19:13:29',50,483,9328),
 (65961,'2026-06-15 16:00:00','Ball Icecream',10,'2026-06-15 19:16:29',50,6,2001),
-(65962,'2026-06-15 16:05:00','Chicken Bonda for Mother 10 + Mitayies for Ponnu 10',20,'2026-06-15 19:17:25',50,6,9326);
+(65962,'2026-06-15 16:05:00','Chicken Bonda for Mother 10 + Mitayies for Ponnu 10',20,'2026-06-15 19:17:25',50,6,9326),
+(65963,'2026-06-15 20:00:00','Cash for Transfer',2000,'2026-06-16 09:12:52',50,6,3671),
+(65964,'2026-06-15 20:05:00','Transfer for Cash',2000,'2026-06-16 09:12:58',50,3671,8935),
+(65965,'2026-06-16 09:00:00','Transfer for Cash',5000,'2026-06-16 09:14:03',50,8935,688),
+(65966,'2026-06-15 21:00:00','Cash for Transfer',5000,'2026-06-16 09:14:14',50,688,6),
+(65967,'2026-06-16 09:05:00','Cash for Deposit',9000,'2026-06-16 09:15:16',50,6,688),
+(65968,'2026-06-16 09:10:00','Probably 20 x1, Maybe Ponnu or Home',20,'2026-06-16 09:24:35',50,6,6869);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11845,4 +11851,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-15 21:29:47
+-- Dump completed on 2026-06-16  5:43:32
