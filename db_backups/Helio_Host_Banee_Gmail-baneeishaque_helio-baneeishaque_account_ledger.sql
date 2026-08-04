@@ -2396,7 +2396,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65969 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65973 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11742,7 +11742,11 @@ INSERT INTO `transactionsv2` VALUES (65828,'2025-07-04 12:05:00','Transfer for C
 (65965,'2026-06-16 09:00:00','Transfer for Cash',5000,'2026-06-16 09:14:03',50,8935,688),
 (65966,'2026-06-15 21:00:00','Cash for Transfer',5000,'2026-06-16 09:14:14',50,688,6),
 (65967,'2026-06-16 09:05:00','Cash for Deposit',9000,'2026-06-16 09:15:16',50,6,688),
-(65968,'2026-06-16 09:10:00','Probably 20 x1, Maybe Ponnu or Home',20,'2026-06-16 09:24:35',50,6,6869);
+(65968,'2026-06-16 09:10:00','Probably 20 x1, Maybe Ponnu or Home',20,'2026-06-16 09:24:35',50,6,6869),
+(65969,'2026-08-04 02:42:00','Initial Balance',14547,'2026-08-04 08:06:34',51,483,6),
+(65970,'2026-08-04 02:47:00','Initial Balance',27998.08,'2026-08-04 08:07:19',51,483,8935),
+(65971,'2026-08-04 02:52:00','Trasfer for Cash',850,'2026-08-04 08:10:13',51,8935,688),
+(65972,'2026-08-04 02:57:00','Cash for Trasfer',850,'2026-08-04 08:10:21',51,688,6);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11820,7 +11824,8 @@ INSERT INTO `users` VALUES (0,'banee_ishaque_k_27_05_2018','9895204814'),
 (47,'banee_ishaque_k_22_10_2025_16_35','9895204814'),
 (48,'banee_ishaque_k_21_03_2026_20_15','9895204814'),
 (49,'banee_ishaque_k_11_04_2026_12_45','9895204814'),
-(50,'banee_ishaque_k_08_05_2026_00_58','9895204814');
+(50,'banee_ishaque_k_08_05_2026_00_58','9895204814'),
+(51,'banee_ishaque_k_04_08_2026_02_42','9895204814');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11851,4 +11856,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-16  5:43:32
+-- Dump completed on 2026-08-04  3:48:01
