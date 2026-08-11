@@ -39,7 +39,7 @@ CREATE TABLE `accounts` (
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`),
   CONSTRAINT `fk_accounts_parent` FOREIGN KEY (`parent_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9330 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9331 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2126,7 +2126,8 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',NULL,'ASSET',NULL,'CURRENCY',
 (9326,'Expenses:Home Expenses:Foods:Evening Snacks','Evening Snacks',8888,'EXPENSE','','CURRENCY','INR',50,'F','F','2026-05-27 20:58:48'),
 (9327,'Assets:Fixed Assets:Electronic Wallets:Amazon Pay:Amazon Pay Banee K:Amazon Pay Wallet Banee K','Amazon Pay Wallet Banee K',3781,'ASSET','','CURRENCY','INR',50,'F','F','2026-06-15 18:58:35'),
 (9328,'Assets:Fixed Assets:Electronic Wallets:Amazon Pay:Amazon Pay Banee K:Amazon Pay Gift Wallet Banee K','Amazon Pay Gift Wallet Banee K',3781,'ASSET','','CURRENCY','INR',50,'F','F','2026-06-15 18:59:30'),
-(9329,'Assets:Assets by User Engaging Strategies:Super Money Rewards','Super Money Rewards',9054,'ASSET','','CURRENCY','INR',51,'F','F','2026-08-10 03:36:52');
+(9329,'Assets:Assets by User Engaging Strategies:Super Money Rewards','Super Money Rewards',9054,'ASSET','','CURRENCY','INR',51,'F','F','2026-08-10 03:36:52'),
+(9330,'Income:Rewards:User Engaging Startegy Rewards:Navi Coins - Banee Ishaque K','Navi Coins - Banee Ishaque K',9060,'INCOME','','CURRENCY','INR',51,'F','F','2026-08-11 20:31:40');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -2412,7 +2413,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=66014 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=66020 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11800,7 +11801,13 @@ INSERT INTO `transactionsv2` VALUES (54009,'2022-03-24 09:15:00','Cre. for Her F
 (66010,'2026-08-09 23:35:00','Opening Balance, Only Useful for PayZapp App. Payments',11,'2026-08-10 03:47:43',51,483,9190,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (66011,'2026-08-09 23:40:00','Opening Balance, Minimum 10 for Release',1.05,'2026-08-10 03:37:37',51,483,9329,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (66012,'2026-08-09 23:25:42','Opening Balance, Coins 1475, The Decimal Points Cannot be Redeem',14.75,'2026-08-10 03:44:53',51,483,9304,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(66013,'2026-08-11 18:00:47','Evening Snack: Noodles (Shared with Banee)',20,'2026-08-11 19:11:16',51,6,8762,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(66013,'2026-08-11 18:00:47','Evening Snack: Noodles (Shared with Banee)',20,'2026-08-11 19:11:16',51,6,8762,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66014,'2026-08-11 20:00:35','Transfer for Cash',300,'2026-08-11 20:30:30',51,8935,688,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66015,'2026-08-11 20:05:54','Reward for Transfer, 100 Coins',1,'2026-08-11 20:32:37',51,9330,9304,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66016,'2026-08-11 20:20:00','Reward for Transfer, 191 Coins',1.91,'2026-08-11 20:34:10',51,9330,9304,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66017,'2026-08-11 20:15:35','Transfer for Cash',250,'2026-08-11 20:35:20',51,8935,688,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66018,'2026-08-11 20:20:35','due to Mother Umrakk Poval Parayan Pokk to Perinthalloor, Beef Fry Half 240 + Porotta x8 15 x8 120 + Alfarm Hisham 120 (Will not Pay by Banee), Total 440, Payable 360',360,'2026-08-11 20:38:04',51,688,8890,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66019,'2026-08-11 20:25:35','Beef Half 240 + Porotta x8 15 x8 120, Total 360 at Skylight Tanalur',360,'2026-08-11 20:39:23',51,8935,688,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11910,4 +11917,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-08-11 13:50:58
+-- Dump completed on 2026-08-11 19:31:50
