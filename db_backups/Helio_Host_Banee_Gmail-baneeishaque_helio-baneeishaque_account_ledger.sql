@@ -39,7 +39,7 @@ CREATE TABLE `accounts` (
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`),
   CONSTRAINT `fk_accounts_parent` FOREIGN KEY (`parent_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9331 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9332 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2127,7 +2127,8 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',NULL,'ASSET',NULL,'CURRENCY',
 (9327,'Assets:Fixed Assets:Electronic Wallets:Amazon Pay:Amazon Pay Banee K:Amazon Pay Wallet Banee K','Amazon Pay Wallet Banee K',3781,'ASSET','','CURRENCY','INR',50,'F','F','2026-06-15 18:58:35'),
 (9328,'Assets:Fixed Assets:Electronic Wallets:Amazon Pay:Amazon Pay Banee K:Amazon Pay Gift Wallet Banee K','Amazon Pay Gift Wallet Banee K',3781,'ASSET','','CURRENCY','INR',50,'F','F','2026-06-15 18:59:30'),
 (9329,'Assets:Assets by User Engaging Strategies:Super Money Rewards','Super Money Rewards',9054,'ASSET','','CURRENCY','INR',51,'F','F','2026-08-10 03:36:52'),
-(9330,'Income:Rewards:User Engaging Startegy Rewards:Navi Coins - Banee Ishaque K','Navi Coins - Banee Ishaque K',9060,'INCOME','','CURRENCY','INR',51,'F','F','2026-08-11 20:31:40');
+(9330,'Income:Rewards:User Engaging Startegy Rewards:Navi Coins - Banee Ishaque K','Navi Coins - Banee Ishaque K',9060,'INCOME','','CURRENCY','INR',51,'F','F','2026-08-11 20:31:40'),
+(9331,'Expenses:Home Expenses:Food Materials','Food Materials',8752,'EXPENSE','','CURRENCY','INR',51,'F','F','2026-08-12 20:13:02');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -2413,7 +2414,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=66020 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=66024 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11807,7 +11808,11 @@ INSERT INTO `transactionsv2` VALUES (54009,'2022-03-24 09:15:00','Cre. for Her F
 (66016,'2026-08-11 20:20:00','Reward for Transfer, 191 Coins',1.91,'2026-08-11 20:34:10',51,9330,9304,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (66017,'2026-08-11 20:15:35','Transfer for Cash',250,'2026-08-11 20:35:20',51,8935,688,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (66018,'2026-08-11 20:20:35','due to Mother Umrakk Poval Parayan Pokk to Perinthalloor, Beef Fry Half 240 + Porotta x8 15 x8 120 + Alfarm Hisham 120 (Will not Pay by Banee), Total 440, Payable 360',360,'2026-08-11 20:38:04',51,688,8890,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(66019,'2026-08-11 20:25:35','Beef Half 240 + Porotta x8 15 x8 120, Total 360 at Skylight Tanalur',360,'2026-08-11 20:39:23',51,8935,688,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(66019,'2026-08-11 20:25:35','Beef Half 240 + Porotta x8 15 x8 120, Total 360 at Skylight Tanalur',360,'2026-08-11 20:39:23',51,8935,688,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66020,'2026-08-12 17:00:23','Muda x5, 8 x5',40,'2026-08-12 20:13:46',51,6,9331,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66021,'2026-08-12 17:05:23','Orange Mitayi x10, 1 x10',10,'2026-08-12 20:14:34',51,6,717,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66022,'2026-08-12 17:10:23','Medical expenses: doctor fee 250, medicine 200, auto charge 130',580,'2026-08-12 20:15:42',51,6,8763,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66023,'2026-08-12 17:15:23','Fish - Puthiyappala Kora',150,'2026-08-12 20:16:07',51,6,9331,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11917,4 +11922,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-08-11 19:31:50
+-- Dump completed on 2026-08-12 19:34:22
