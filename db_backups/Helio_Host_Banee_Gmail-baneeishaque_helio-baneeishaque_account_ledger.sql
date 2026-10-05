@@ -39,7 +39,7 @@ CREATE TABLE `accounts` (
   UNIQUE KEY `account_id_UNIQUE` (`account_id`),
   KEY `parent_account_id` (`parent_account_id`),
   CONSTRAINT `fk_accounts_parent` FOREIGN KEY (`parent_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9332 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9339 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2128,7 +2128,14 @@ INSERT INTO `accounts` VALUES (1,'Assets','Assets',NULL,'ASSET',NULL,'CURRENCY',
 (9328,'Assets:Fixed Assets:Electronic Wallets:Amazon Pay:Amazon Pay Banee K:Amazon Pay Gift Wallet Banee K','Amazon Pay Gift Wallet Banee K',3781,'ASSET','','CURRENCY','INR',50,'F','F','2026-06-15 18:59:30'),
 (9329,'Assets:Assets by User Engaging Strategies:Super Money Rewards','Super Money Rewards',9054,'ASSET','','CURRENCY','INR',51,'F','F','2026-08-10 03:36:52'),
 (9330,'Income:Rewards:User Engaging Startegy Rewards:Navi Coins - Banee Ishaque K','Navi Coins - Banee Ishaque K',9060,'INCOME','','CURRENCY','INR',51,'F','F','2026-08-11 20:31:40'),
-(9331,'Expenses:Home Expenses:Food Materials','Food Materials',8752,'EXPENSE','','CURRENCY','INR',51,'F','F','2026-08-12 20:13:02');
+(9331,'Expenses:Home Expenses:Food Materials','Food Materials',8752,'EXPENSE','','CURRENCY','INR',51,'F','F','2026-08-12 20:13:02'),
+(9332,'Assets:Receivable Assets:Service Charges:Foods:Lunch:Online Order','Online Order',1059,'RECEIVABLE','','CURRENCY','INR',52,'F','F','2026-10-05 14:06:12'),
+(9333,'Assets:Receivable Assets:Service Charges:Foods:Lunch:Online Order:Online Order - Swiggy','Online Order - Swiggy',9332,'RECEIVABLE','','CURRENCY','INR',52,'F','F','2026-10-05 14:06:39'),
+(9334,'Assets:Receivable Assets:Service Charges:Foods:Lunch:Online Order:Online Order - Swiggy:Online Order - Swiggy - Hajara K','Online Order - Swiggy - Hajara K',9333,'RECEIVABLE','','CURRENCY','INR',52,'F','F','2026-10-05 14:07:08'),
+(9335,'Assets:Receivable Assets:Service Charges:Foods:Lunch:Online Order:Online Order - Swiggy:Online Order - Swiggy - Hajara K:Online Order - Swiggy - Hajara K - Lillis Tirur','Online Order - Swiggy - Hajara K - Lillis Tirur',9334,'RECEIVABLE','','CURRENCY','INR',52,'F','F','2026-10-05 14:08:03'),
+(9336,'Assets:Receivable Assets:Service Charges:Foods:Lunch:Online Order:Online Order - Swiggy:Online Order - Swiggy - Hajara K:Online Order - Swiggy - Hajara K - Lillis Tirur:Online Order - Swiggy - Hajara K - Lillis Tirur - Shavaya','Online Order - Swiggy - Hajara K - Lillis Tirur - Shavaya',9335,'RECEIVABLE','','CURRENCY','INR',52,'F','F','2026-10-05 14:09:35'),
+(9337,'Expenses:Clothes:Clothes - Storage Accessories','Clothes - Storage Accessories',387,'EXPENSE','','CURRENCY','INR',52,'F','F','2026-10-05 14:29:55'),
+(9338,'Expenses:Home Expenses:Home Agriculture','Home Agriculture',8752,'EXPENSE','','CURRENCY','INR',52,'F','F','2026-10-05 14:31:55');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -2414,7 +2421,7 @@ CREATE TABLE `transactionsv2` (
   KEY `idx_to_account_id` (`to_account_id`),
   CONSTRAINT `fk_txv2_from_account` FOREIGN KEY (`from_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_txv2_to_account` FOREIGN KEY (`to_account_id`) REFERENCES `accounts` (`account_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=66024 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=66041 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11812,7 +11819,24 @@ INSERT INTO `transactionsv2` VALUES (54009,'2022-03-24 09:15:00','Cre. for Her F
 (66020,'2026-08-12 17:00:23','Muda x5, 8 x5',40,'2026-08-12 20:13:46',51,6,9331,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (66021,'2026-08-12 17:05:23','Orange Mitayi x10, 1 x10',10,'2026-08-12 20:14:34',51,6,717,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (66022,'2026-08-12 17:10:23','Medical expenses: doctor fee 250, medicine 200, auto charge 130',580,'2026-08-12 20:15:42',51,6,8763,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(66023,'2026-08-12 17:15:23','Fish - Puthiyappala Kora',150,'2026-08-12 20:16:07',51,6,9331,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(66023,'2026-08-12 17:15:23','Fish - Puthiyappala Kora',150,'2026-08-12 20:16:07',51,6,9331,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66024,'2026-10-04 10:45:19','Initial Balance',5306,'2026-10-05 13:57:51',52,483,6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66025,'2026-10-04 10:50:19','Initial Balance',499019.52,'2026-10-05 13:59:21',52,483,8935,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66026,'2026-10-04 10:55:19','Initial Balance',10000,'2026-10-05 14:01:47',52,9138,483,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66027,'2026-10-04 11:00:19','Passport Application Challan Payment for Someone - Amount 2500, Gateway Fee 29.63',2529.63,'2026-10-05 14:03:32',52,9138,688,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66028,'2026-10-04 11:05:19','Shavaya Quarter + Fresh Lime x2 (Banee + Insha)',147,'2026-10-05 14:11:50',52,8935,9336,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66029,'2026-10-04 11:10:19','Credit Consolidation - Passport Payment - 30 Transfer, 2500 Cash',30,'2026-10-05 14:13:48',52,688,8935,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66030,'2026-10-04 11:15:19','Credit Consolidation - Passport Payment - 30 Transfer, 2500 Cash',2500,'2026-10-05 14:14:09',52,688,6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66031,'2026-10-05 10:45:19','EMI October 2026',3920,'2026-10-05 14:15:21',52,8935,9272,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66032,'2026-10-04 10:46:19','Initial Balance - Current Bill',1417,'2026-10-05 14:17:10',52,483,3681,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66033,'2026-10-04 10:51:19','Initial Balance - Balance on Credit Card Loan Repayment',96,'2026-10-05 14:18:01',52,483,1461,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66034,'2026-10-05 12:00:48','Credit Consolidation',1420,'2026-10-05 14:23:06',52,3681,8935,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66035,'2026-10-05 12:05:17','Credit Consolidation',100,'2026-10-05 14:23:26',52,1461,8935,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66036,'2026-10-05 12:10:47','Overflow Correction',4,'2026-10-05 14:26:57',52,339,1461,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66037,'2026-10-05 12:06:21','Overflow Correction',3,'2026-10-05 14:26:30',52,339,3681,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66038,'2026-10-04 12:11:19','Overflow Correction',0.37,'2026-10-05 14:21:47',52,339,688,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66039,'2026-10-02 09:30:04','Hanger (Plastic) - 1 jody',200,'2026-10-05 14:31:15',52,38,9337,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(66040,'2026-10-05 14:32:10','for Kurumulak Thai from Panchayat (via. Razak AV Memeber) [Maybe]',60,'2026-10-05 14:33:23',52,38,9338,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `transactionsv2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11891,7 +11915,8 @@ INSERT INTO `users` VALUES (0,'banee_ishaque_k_27_05_2018','9895204814'),
 (48,'banee_ishaque_k_21_03_2026_20_15','9895204814'),
 (49,'banee_ishaque_k_11_04_2026_12_45','9895204814'),
 (50,'banee_ishaque_k_08_05_2026_00_58','9895204814'),
-(51,'banee_ishaque_k_04_08_2026_02_42','9895204814');
+(51,'banee_ishaque_k_04_08_2026_02_42','9895204814'),
+(52,'banee_ishaque_k_04_10_2026_10_45','9895204814');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11922,4 +11947,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-08-12 19:34:22
+-- Dump completed on 2026-10-05 15:04:14
