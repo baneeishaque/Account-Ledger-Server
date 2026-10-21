@@ -2,7 +2,7 @@
 --
 -- Host: 64.62.151.106    Database: baneeishaque_account_ledger
 -- ------------------------------------------------------
--- Server version	12.3.2-MariaDB-log
+-- Server version	12.3.3-MariaDB-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -11947,4 +11947,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-05 15:04:14
+-- Dump completed on 2026-10-21 17:27:38
